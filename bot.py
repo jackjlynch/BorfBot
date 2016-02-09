@@ -17,6 +17,8 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('meme'):
         await client.send_message(message.channel, 'nice meme!')
+    if 'borf' in message.content:
+        await client.send_message(message.channel, 'heck')
 
 
 client.run(user, password)
