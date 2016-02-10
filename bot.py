@@ -1,6 +1,9 @@
 import discord
 import asyncio
 import configparser
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 config = configparser.ConfigParser()
 config.read('settings.cfg')
@@ -8,10 +11,6 @@ user = config['credentials']['user']
 password = config['credentials']['user']
 
 client = discord.Client()
-
-@client.event
-async def on_ready():
-    print(client.user.name)
 
 @client.event
 async def on_message(message):
